@@ -28,7 +28,7 @@ class Solution{
 	}
 
 	vector<int> v; // contains all subset sums possible with n elements // creating a vector varible to store all the element of the last row 
-	for (int j = 0; j <= sum; j++) // from the range we need to exclude the element which is not there in the existing problem 
+	for (int j = 0; j <= sum/2; j++) // from the range we need to exclude the element which is not there in the existing problem 
 		if (t[n][j] == true) // keep true to only those place whose subset sum exist
 			v.push_back(j); // store in the vector 
 
