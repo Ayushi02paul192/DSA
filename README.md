@@ -1,2 +1,1 @@
-# DSA
-this has been created to keep a track record in problems solved.
+Keeping a track of the questions solved

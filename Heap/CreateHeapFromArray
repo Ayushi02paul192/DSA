@@ -1,0 +1,51 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long int
+ll mod=1000000007;
+void heapify(int ar[],int n,int l)
+{
+    int largest=l;
+    int left=2*l;
+    int right=2*l+1;
+    if(left<n && ar[left]>ar[largest])
+    largest=left;
+    if(right<n && ar[right]>ar[largest])
+largest=right;
+    if(largest!=l)
+   { swap(ar[largest],ar[l]);
+    heapify(ar,n,largest);
+   }
+}
+void buildHeap(int arr[],int n)
+{
+    int index=(n/2)-1;
+    for(int i=index;i>=0;i--)
+    heapify(arr,n,i);
+}
+void printheap(int arr[],int n)
+{
+    cout<<"Array Rep\n";
+    for(int i=0;i<n;i++)
+    cout<<arr[i]<<" ";
+}
+int main()
+{
+ #ifndef ONLINE_JUDGE
+freopen("input.txt", "r", stdin);
+freopen("output.txt", "w", stdout);
+#endif
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);    
+    cout.tie(NULL);  
+    // ll t=1;
+    //  cin>>t;
+    int ar[]={1,2,3,4,5,6,7,8};
+    //  while(t--)
+    //  {
+     int n=sizeof(ar)/sizeof(ar[0]);
+     buildHeap(ar,n);
+     printheap(ar,n);
+     return 0;
+     
+    //  }
+}
