@@ -1,0 +1,17 @@
+ int getDecimalValue(ListNode* head) {
+        vector<int> v;
+        ListNode* h=head;
+        while(h!=NULL)
+        {
+            v.push_back(h->val);
+            h=h->next;
+        }
+        int n=v.size();
+         int p=0,c=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            p+=pow(2,c++)*v[i];
+        }
+        return p;
+    }
+};
